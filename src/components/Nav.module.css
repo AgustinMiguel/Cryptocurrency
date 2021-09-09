@@ -1,0 +1,20 @@
+.Nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(60, 60, 209);
+    color: gray;
+    max-height: 50%;
+    padding: 10px;
+}
+
+.Nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: tomato;
+}
+
+.Nav li {
+    margin: 5px;
+    color: white;
+}
