@@ -8,8 +8,8 @@ const List = () => {
   const url = "https://api.coinlore.net/api/tickers/"
 
   useEffect(() => {
-    fetchCryptoList().then(({data}: {data:Array<CurrenciesResponse>}) =>{
-      setCoinList(data);
+    fetchCryptoList().then(({data}: {data: {data:Array<CryptoCurrency>}}) =>{
+      console.log(data.data)
     });
   }, []);
 
