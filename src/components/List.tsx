@@ -9,7 +9,7 @@ const List = () => {
 
   useEffect(() => {
     fetchCryptoList().then(({data}: {data: {data:Array<CryptoCurrency>}}) =>{
-      console.log(data.data)
+      setCoinList(data.data)
     });
   }, []);
 
