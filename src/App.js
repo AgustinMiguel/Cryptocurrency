@@ -3,7 +3,7 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import List from "./components/List.tsx";
-import Coin from "./components/Coin";
+import Coin from "./components/Coin.tsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {

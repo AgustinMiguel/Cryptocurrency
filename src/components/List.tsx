@@ -1,26 +1,18 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import * as CurrenciesService from "../services/CurrenciesService";
 import { Link } from "react-router-dom";
-import {CurrenciesResponse, CryptoCurrency} from "./../interfaces/InterfacesList"
+import { CryptoCurrency } from "./../interfaces/InterfacesList";
 const List = () => {
   const [coinList, setCoinList] = useState<Array<CryptoCurrency>>();
-  
-  const url = "https://api.coinlore.net/api/tickers/"
 
   useEffect(() => {
-    fetchCryptoList().then(({data}: {data: {data:Array<CryptoCurrency>}}) =>{
-      setCoinList(data.data)
-    });
+    CurrenciesService.fetchCryptoList().then(
+      ({ data }: { data: { data: Array<CryptoCurrency> } }) => {
+        setCoinList(data.data);
+      }
+    );
   }, []);
 
-  const fetchCryptoList = async () => {
-    return await axios.get(url)
-  }
-
-  const getCurrencies = async () => {
-    const data = await fetch("https://api.coinlore.net/api/tickers/");
-    return await data.json();
-  };
   return (
     <React.Fragment>
       <ul>
