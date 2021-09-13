@@ -3,7 +3,6 @@ import "./App.css"
 import "antd/dist/antd.css";
 import About from "./components/About";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
 import List from "./components/CurrencyList.tsx";
 import Coin from "./components/Coin.tsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
