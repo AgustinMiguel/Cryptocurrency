@@ -13,15 +13,18 @@ customAxios.interceptors.request.use(
   },
   function (error) {
     // Do something with request error
+    console.log("error");
     return Promise.reject(error);
   }
 );
 
 customAxios.interceptors.response.use(
   function (response) {
+    console.log(response);
     return response;
   },
   function (error) {
+    console.log("rejected");
     return Promise.reject(error);
   }
 );

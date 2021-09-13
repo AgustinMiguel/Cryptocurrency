@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as CurrenciesService from "../services/CurrenciesService";
 import { Link } from "react-router-dom";
-import { CryptoCurrency } from "./../interfaces/InterfacesList";
-const List = () => {
+import { CryptoCurrency } from "../interfaces/InterfacesList";
+import { List, Card } from 'antd';
+const CurrencyList = () => {
   const [coinList, setCoinList] = useState<Array<CryptoCurrency>>();
 
   useEffect(() => {
@@ -31,4 +32,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default CurrencyList;
