@@ -10,6 +10,7 @@ const Home = () => {
   
   const onFinish = (values: any) => {
     setName(values.username);
+    dispatch({ type: "add", payload: name });
   };
   
   const onFinishFailed = (errorInfo: any) => {
@@ -44,7 +45,7 @@ const Home = () => {
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button
           onClick={() => {
-            dispatch({ type: "add", payload: name });
+            onFinish();
           }}
           type="primary"
           htmlType="submit"
