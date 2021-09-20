@@ -2,17 +2,20 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 import "antd/dist/antd.css";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState<string>();
-  
+
+  useEffect(() => {
+    dispatch({ type: "add", payload: name });
+  }, [name]);
+
   const onFinish = (values: any) => {
     setName(values.username);
-    dispatch({ type: "add", payload: name });
   };
-  
+
   const onFinishFailed = (errorInfo: any) => {
     console.log(errorInfo);
   };
@@ -45,7 +48,6 @@ const Home = () => {
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button
           onClick={() => {
-            onFinish();
           }}
           type="primary"
           htmlType="submit"
@@ -58,3 +60,4 @@ const Home = () => {
 };
 
 export default Home;
+
